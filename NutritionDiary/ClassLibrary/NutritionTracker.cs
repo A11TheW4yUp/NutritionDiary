@@ -18,7 +18,7 @@ namespace ClassLibrary
 
         public void AddEntry(FoodEntry entry)
         {
-            if (entry == null) throw new ArgumentNullException(nameof(entry));
+            ArgumentNullException.ThrowIfNull(entry);
             if (GetDailyTotalCalories() + entry.Calories > DailyCalorieLimit)
                 throw new InvalidOperationException(LimitExceededMessage);
 
