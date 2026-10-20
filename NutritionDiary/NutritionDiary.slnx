@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="../../Игнатьева Разработка технической документации/ClassLibrary/ClassLibrary.csproj" Id="dc8c0e4b-d9ed-4a05-b1ce-df5ccacf241e" />
+  <Project Path="../../Игнатьева Разработка технической документации/WindowsFormsApp1/WindowsFormsApp1.csproj" Id="0573596d-faf8-4045-95b8-936bb758aa6f" />
+  <Project Path="../Test Gost/Test Gost.csproj" Id="ba364c83-ddc1-4392-97fa-1a18a1c77f1d" />
+</Solution>
