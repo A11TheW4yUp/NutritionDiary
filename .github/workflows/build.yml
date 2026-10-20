@@ -17,18 +17,18 @@ jobs:
         with:
           java-version: 21
           distribution: 'zulu'
-      
+
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
+
       - name: Cache SonarQube Cloud packages
         uses: actions/cache@v4
         with:
           path: ~\sonar\cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
-      
+
       - name: Cache SonarQube Cloud scanner
         id: cache-sonar-scanner
         uses: actions/cache@v4
@@ -36,14 +36,14 @@ jobs:
           path: ${{ runner.temp }}\scanner
           key: ${{ runner.os }}-sonar-scanner
           restore-keys: ${{ runner.os }}-sonar-scanner
-      
+
       - name: Install SonarQube Cloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         shell: powershell
         run: |
           New-Item -Path ${{ runner.temp }}\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path ${{ runner.temp }}\scanner
-      
+
       - name: Begin SonarQube analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -51,14 +51,14 @@ jobs:
         run: |
           cd NutritionDiary
           ${{ runner.temp }}\scanner\dotnet-sonarscanner begin /k:"A11TheW4yUp_NutritionDiary" /o:"a11thew4yup" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-      
+
       - name: Restore and build
         shell: powershell
         run: |
           cd NutritionDiary
           dotnet restore
           dotnet build --no-restore
-      
+
       - name: End SonarQube analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -66,9 +66,3 @@ jobs:
         run: |
           cd NutritionDiary
           ${{ runner.temp }}\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-an a mmp2  . the.: sp to1 is sp,.: sp7 sp2
- sp, of
-46
- to3 to sp sp m to0,, a sp sp m the sp to m and
- k: :2.6
- m:,) to8 m the
